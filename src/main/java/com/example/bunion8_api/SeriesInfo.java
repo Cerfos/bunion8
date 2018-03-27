@@ -34,9 +34,9 @@ public class SeriesInfo {
 	
 	
 	
-	public void setId(Long id) {
-		this.id = id;
-	}
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
 
 	public Set<Comment> getComments() {
 		return comments;
