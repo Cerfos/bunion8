@@ -3,9 +3,12 @@ package com.example.bunion8_api;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class SeriesController {
 	
@@ -28,6 +31,7 @@ public class SeriesController {
 		
 		Comment comment = new Comment();
 		comment.setBody("yuk yuk yuk");
+		
 		
 		rating.setSeriesInfo(newSeries);
 		comment.setSeriesInfo(newSeries);
