@@ -19,26 +19,30 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 
-@Table(name="series_info")
+@Table(name="movie_info")
 @JsonIdentityInfo(
         generator = ObjectIdGenerators.PropertyGenerator.class, 
         property = "id")
 
-public class SeriesInfo {
+public class MovieInfo {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	
+	private String poster_path;
+	private String backdrop_path;
+	private String overview;
 	private String name;
 	
 	@OneToMany(cascade = CascadeType.ALL,
 			fetch = FetchType.LAZY,
-			mappedBy="seriesInfo")
+			mappedBy="movieInfo")
 	private Set<Rating> ratings = new HashSet<>();
 	
 	@OneToMany(cascade = CascadeType.ALL,
 			fetch = FetchType.LAZY,
-			mappedBy="seriesInfo")
+			mappedBy="movieInfo")
 	private Set<Comment> comments = new HashSet<>();
 	
 	
@@ -47,6 +51,30 @@ public class SeriesInfo {
 //	public void setId(Long id) {
 //		this.id = id;
 //	}
+
+	public String getPoster_path() {
+		return poster_path;
+	}
+
+	public void setPoster_path(String poster_path) {
+		this.poster_path = poster_path;
+	}
+
+	public String getBackdrop_path() {
+		return backdrop_path;
+	}
+
+	public void setBackdrop_path(String backdrop_path) {
+		this.backdrop_path = backdrop_path;
+	}
+
+	public String getOverview() {
+		return overview;
+	}
+
+	public void setOverview(String overview) {
+		this.overview = overview;
+	}
 
 	public Set<Comment> getComments() {
 		return comments;

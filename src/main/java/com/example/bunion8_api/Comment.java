@@ -26,8 +26,8 @@ public class Comment {
 	private String body;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="series_id", nullable=false)
-	private SeriesInfo seriesInfo;
+	@JoinColumn(name="movie_id", nullable=false)
+	private MovieInfo movieInfo;
 
 	public String getBody() {
 		return body;
@@ -37,17 +37,19 @@ public class Comment {
 		return id;
 	}
 
-	public SeriesInfo getSeriesInfo() {
-		return seriesInfo;
+	public MovieInfo getMovieInfo() {
+		return movieInfo;
 	}
 
 	public void setBody(String body) {
 		this.body = body;
 	}
 
-	public void setSeriesInfo(SeriesInfo seriesInfo) {
-		this.seriesInfo = seriesInfo;
+	public void setMovieInfo(MovieInfo movieInfo) {
+		this.movieInfo = movieInfo;
 	}
+
+	
 
 	
 }
