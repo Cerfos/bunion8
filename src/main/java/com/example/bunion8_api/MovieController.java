@@ -28,25 +28,5 @@ public class MovieController {
         return movieInfoRepository.findAll();
     }
     
-    @GetMapping("/test")
-    public String test() {
-        
-        MovieInfo newMovie = new MovieInfo();
-        newMovie.setName("Three Stooges");
-                
-        Rating rating = new Rating();
-        rating.setStars(5);
-
-        Comment comment = new Comment();
-        comment.setBody("yuk yuk yuk");
-        
-        rating.setMovieInfo(newMovie);
-        comment.setMovieInfo(newMovie);
-        newMovie.getRatings().add(rating);
-        newMovie.getComments().add(comment);
-        
-        movieInfoRepository.save(newMovie);
-        
-        return "test";
-    }
+   
 }

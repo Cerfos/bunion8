@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -32,8 +33,10 @@ public class MovieInfo {
 	
 	private String poster_path;
 	private String backdrop_path;
+	
+	@Column(columnDefinition="TEXT")
 	private String overview;
-	private String name;
+	private String title;
 	
 	@OneToMany(cascade = CascadeType.ALL,
 			fetch = FetchType.LAZY,
@@ -96,11 +99,11 @@ public class MovieInfo {
 		return id;
 	}
 	
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String title) {
+		this.title = title;
 	}
 	
 	
